@@ -11,6 +11,6 @@ some_condom = 'Any brand'
 
 if not use_condom(some_condom):
     family = 3
-    print('Game Over!')
+    print("You will gonna be {family}! Game Over!")
 else:
-    print('Live your life and be happy!')
+    print("Live your life and be happy!")
