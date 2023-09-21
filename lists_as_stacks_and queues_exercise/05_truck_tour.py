@@ -1,28 +1,28 @@
 from collections import deque
 
-pumps = deque()
 number_of_pumps = int(input())
+pumps_input = deque()
 for _ in range(number_of_pumps):
-    pumps.append([int(x) for x in input().split()])
+    pumps_input.append([int(x) for x in input().split()])
 
 total_distance = 0
-for i in range(len(pumps)):
-    total_distance += pumps[i][1]
-number_of_pumps = len(pumps)
-start_pump_index = 0
+for i in range(len(pumps_input)):
+    total_distance += pumps_input[i][1]
 fuel_left = 0
-for pump_index in range(number_of_pumps):
+current_distance = 0
+pumps = deque([x for x in pumps_input])
+
+while current_distance < total_distance:
     fuel, distance = pumps[0]
     if fuel + fuel_left >= distance:
-        start_pump_index = pump_index
         fuel_left += fuel - distance
-        total_distance -= distance
-        if total_distance > 0:
-            pumps.rotate(-1)
-    else:
-        start_pump_index = 0
-        pumps.rotate(-1)
+        current_distance += distance
+    pumps.rotate(-1)
+print(pumps_input.index(pumps[0]))
 
-print(start_pump_index)
+
+# debug
 print(total_distance)
+print(current_distance)
+print(pumps_input)
 print(pumps)
