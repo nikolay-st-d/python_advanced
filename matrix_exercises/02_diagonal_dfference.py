@@ -1,7 +1,7 @@
 n = int(input())
-matrix = []
-for _ in range(n):
-    matrix.append([])
+matrix = [[] for _ in range(n)]
+# for _ in range(n):
+#     matrix.append([])
 
 for row_index in range(n):
     column = [int(x) for x in input().split()]

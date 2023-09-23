@@ -1,7 +1,8 @@
 n = int(input())
-matrix = []
-for i in range(n):
-    matrix.append([int(x) for x in input().split(', ')])
+# matrix = []
+# for i in range(n):
+#     matrix.append([int(x) for x in input().split(', ')])
+matrix = [[int(x) for x in input().split(', ')] for _ in range(n) ]
 primary_diagonal = []
 for i in range(len(matrix)):
     primary_diagonal.append(matrix[i][i])

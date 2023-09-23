@@ -1,9 +1,5 @@
 rows, cols = [int(x) for x in input().split()]
-matrix = []
-
-for _ in range(rows):
-    row = [x for x in input().split()]
-    matrix.append(row)
+matrix = [[x for x in input().split()] for _ in range(rows)]
 
 found_elements = 0
 for row in range(rows - 1):
