@@ -1,19 +1,3 @@
-# def find_submatrix(matrix, start_row, start_column, subm_w, subm_h):
-#     matrix_width = len(matrix[0])
-#     matrix_height = len(matrix[0][0])
-#     if matrix_width > subm_w and matrix_height > subm_h:
-#         submatrix = []
-#         for row_index in range(matrix_width - subm_w):
-#             row = []
-#             for col_index in range(matrix_height - subm_h):
-#                 pass
-#         return submatrix
-#     elif matrix_width == subm_w and matrix_height == subm_h:
-#         return matrix
-#     else:
-#         return 'Given matrix smaller than the submatrix you are trying to extract.'
-
-
 def extract_submatrix(my_matrix, start_row, start_col, submatrix_width, submatrix_height):
     if (
             start_row < 0
@@ -40,7 +24,7 @@ def matrix_sum(some_matrix):
 
 rows, columns = [int(x) for x in input().split()]
 matrix = [[int(x) for x in input().split()] for _ in range(rows)]
-max_sum = 0
+max_sum = float('-inf')
 max_matrix = []
 for row in range(rows - 2):
     for column in range(columns - 2):
@@ -53,3 +37,5 @@ print(f'Sum = {max_sum}')
 for row in max_matrix:
     print(*row)
 
+# alternative print with comprehension
+# [print(*row) for row in max_matrix]

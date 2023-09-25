@@ -16,12 +16,12 @@ def extract_submatrix(matrix, start_row, start_col, submatrix_width, submatrix_h
 
 
 def print_matrix(some_matrix):
-    """ Matrix shall contain INT elements only """
     for current_row in some_matrix:
-        print(current_row)
+        print(*current_row)
 
 
 def matrix_sum(some_matrix):
+    """ Matrix shall contain INT elements only """
     sum_of_matrix = 0
     for current_row in some_matrix:
         sum_of_matrix += sum(current_row)
